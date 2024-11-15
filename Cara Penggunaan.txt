@@ -1,0 +1,6 @@
+1. Enablekan settingan pada edge://flags/#unsafely-treat-insecure-origin-as-secure untuk 
+   https://localhost:5000, http://notesapp-v1.dicodingacademy.com
+2. jalankan npm run start pada terminal
+3. buka http://notesapp-v1.dicodingacademy.com
+
+
