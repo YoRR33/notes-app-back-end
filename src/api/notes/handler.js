@@ -40,12 +40,14 @@ class NotesHandler {
   async getNoteByIdHandler(request, h) {
     const { id } = request.params;
     const note = await this._service.getNoteById(id);
-    return {
-      status: "success",
-      data: {
-        note,
-      },
-    };
+    return h
+      .response({
+        status: "success",
+        data: {
+          note,
+        },
+      })
+      .code(200);
   }
 
   async putNoteByIdHandler(request, h) {
