@@ -31,14 +31,12 @@ class UsersHandler {
   async getUserByIdHandler(request, h) {
     const { id } = request.params;
     const user = await this._service.getUserById(id);
-    return h
-      .response({
-        status: "success",
-        data: {
-          user,
-        },
-      })
-      .code(200);
+    return {
+      status: "success",
+      data: {
+        user,
+      },
+    };
   }
 }
 

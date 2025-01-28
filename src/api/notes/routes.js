@@ -2,7 +2,7 @@ const routes = (handler) => [
   {
     method: "POST",
     path: "/notes",
-    handler: handler.postNoteHandler, // postNoteHandler hanya menerima dan menyimpan "satu" note.
+    handler: handler.postNoteHandler,
     options: {
       auth: "notesapp_jwt",
     },
@@ -10,7 +10,7 @@ const routes = (handler) => [
   {
     method: "GET",
     path: "/notes",
-    handler: handler.getNotesHandler, //getNotesHandler mengembalikan "banyak" note.
+    handler: handler.getNotesHandler,
     options: {
       auth: "notesapp_jwt",
     },
