@@ -1,5 +1,3 @@
-const ClientError = require("../../exceptions/ClientError");
-
 class AuthenticationsHandler {
   constructor(authenticationsService, usersService, tokenManager, validator) {
     this._authenticationsService = authenticationsService;
@@ -47,13 +45,13 @@ class AuthenticationsHandler {
     const { id } = this._tokenManager.verifyRefreshToken(refreshToken);
 
     const accessToken = this._tokenManager.generateAccessToken({ id });
-    return h.response({
+    return {
       status: "success",
       message: "Access Token berhasil diperbarui",
       data: {
         accessToken,
       },
-    });
+    };
   }
 
   async deleteAuthenticationHandler(request, h) {
@@ -63,10 +61,10 @@ class AuthenticationsHandler {
     await this._authenticationsService.verifyRefreshToken(refreshToken);
     await this._authenticationsService.deleteRefreshToken(refreshToken);
 
-    return h.response({
+    return {
       status: "success",
       message: "Refresh token berhasil dihapus",
-    });
+    };
   }
 }
 
